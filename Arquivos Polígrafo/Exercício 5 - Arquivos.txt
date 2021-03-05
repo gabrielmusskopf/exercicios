@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<conio.h>
+#include<math.h>
+
+int main(void)
+{
+    FILE *file;
+
+    char string[81];
+    int tamanho;
+    char aux;
+    char c;
+
+
+
+    file=fopen("string.tx_.txt","w");
+
+    if(file==NULL)
+    {
+        puts("nao abre");
+    }else
+    printf("Arquivo aberto com sucesso\n");
+
+    printf("Digite sua string\n");
+    gets(string);
+    tamanho=strlen(string);
+
+
+    fputs(string,file);
+    fputs("\n",file);
+
+
+     for(int i=tamanho;i>=0;i--)
+     {
+         fputc(string[i],file);
+     }
+     fputs("\n",file);
+
+    for(int j=0;j<tamanho;j++)
+    {
+        if(string[j]!=' ')
+        {
+            fputc(string[j],file);
+        }else
+
+         fprintf(file,"\n");
+    }
+
+    for(int j=0;j<tamanho;j++)
+    {
+        if(string[j]!=' ')
+        {
+            fputc(string[j],file);
+        }else
+
+         fprintf(file,"\n");
+    }
+
+    fputs("\n",file);
+    
+    Compara(string,FILE *file)
+
+
+
+    fclose(file);
+
+}
+
+void Compara(char string[],FILE *file)
+{
+  /// FAZER UM VETOR PARA COMPARAR E OUTRO PARA ARMAZENAR
+    char letras[100];
+
+    for(int i=0;i<100;i++)
+    {
+        letras[i]=string[i];
+        for(int j=0;j<100;j++)
+        {
+             if(letras[i]==string[j])
+            {
+                letras[i]++;
+                
+                fprintf(file,)
+            }
+        }
+    }
+    
+    
+   
+
+
+}

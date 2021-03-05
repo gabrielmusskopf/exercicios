@@ -1,0 +1,29 @@
+/*
+Escrever um programa que lê uma string e a
+escreve em maiúsculo num arquivo.
+*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+
+#define TAM 30
+
+int main(void){
+
+    FILE *fp;
+    fp=fopen("C:\\Users\\laboratorio\\Desktop\\teste.txt","wt");
+
+    char ch;
+
+    printf("Digite sua string:\n");
+
+    do{
+        ch=getchar();
+        ch=toupper(ch);
+        putc(ch,fp);
+    }while(ch!='*');
+
+    fclose(fp);
+
+}

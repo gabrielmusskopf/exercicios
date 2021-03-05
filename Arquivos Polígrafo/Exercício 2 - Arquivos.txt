@@ -1,0 +1,31 @@
+/*
+Escrever um programa que lê uma string s[30] e escreve cada palavra desta string
+numa nova linha dentro de um arquivo.
+*/
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+
+#define TAM 30
+
+int main(void){
+
+    FILE *fp;
+    fp=fopen("C:\\Users\\laboratorio\\Desktop\\teste.txt","w+");
+
+    char s;
+    int i;
+
+    do{
+    s=getchar();
+    putc(s, fp);
+    if(s==' ')
+    {
+        fputs("\n",fp);
+    }
+
+    }while(s!='*');
+
+    fclose(fp);
+}

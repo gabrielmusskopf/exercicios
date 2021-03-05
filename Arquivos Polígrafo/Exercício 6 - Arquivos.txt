@@ -1,0 +1,41 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void)
+{
+    FILE  *fp;
+    char string[40];
+    char nome[40];
+    char ext[] = ".txt";
+    char diretorio[]="C:\\Users\\laboratorio\\Desktop\\";
+    int i;
+
+
+    printf("Digite a string: ");
+    gets(string);
+
+    printf("Nome do arquivo gerado: ");
+    gets(nome);
+    strcat(nome,ext);
+    strcat(diretorio,nome);
+
+    fp=fopen(diretorio,"w");
+
+    fprintf(fp,"%s",string);
+
+    fputs("\n\n",fp);
+
+    for(i=0; i<strlen(string);i++)
+    {
+        string[i]=tolower(string[i]);
+        fprintf(fp,"%c\t",string[i]);
+        string[i]=toupper(string[i]);
+        fprintf(fp,"%c",string[i]);
+
+        fprintf(fp,"\n");
+    }
+
+    fclose(fp);
+}
